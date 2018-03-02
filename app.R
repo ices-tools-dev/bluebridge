@@ -117,7 +117,7 @@ server <- function(input, output, session) {
           paste(input$SpeciesName,"_",input$SimSampSize,"_",input$SimZs,"_", Sys.Date(), ".csv", sep="")
         },
         content = function(file) {
-          write.table(round(lengFreqVals,2), file,row.names = FALSE,col.names=c("length","count","year"),sep=",",append=FALSE)
+          write.table(round(lengFreqValReact(),2), file,row.names = FALSE,col.names=c("length","count","year"),sep=",",append=FALSE)
         },
         contentType = "text/csv"
       )
